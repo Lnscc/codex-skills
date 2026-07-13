@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Ticket Workflow"
+  short_description: "Resolve local repository tickets from docs/tickets"
+  default_prompt: "Use $local-ticket-workflow to inspect and handle tickets from this repository."

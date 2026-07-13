@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suggest Next Ticket"
+  short_description: "Suggest, select, and implement the next ticket"
+  default_prompt: "Use $suggest-next-ticket to recommend and then implement the next local ticket."
