@@ -14,6 +14,10 @@ When given a ticket identifier:
 5. Determine whether the user requests information, diagnosis, or implementation. Do not implement changes for a read-only request.
 6. For implementation requests, implement the smallest complete change and run relevant tests.
 7. Report the result against the ticket's acceptance criteria, including tests and remaining uncertainties.
+8. After every implementation, explicitly state whether the database changed and whether the API changed, even when neither changed. For each change, include a concrete example:
+   - Database: name the migration, table, column, constraint, or data change and show a representative before/after value or schema example.
+   - API: name the affected endpoint or contract and show a representative request, response, or payload example.
+   - When an area did not change, state `Database changed: No` or `API changed: No` explicitly.
 
 When closing a ticket:
 
