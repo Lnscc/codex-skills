@@ -6,6 +6,7 @@ Personal Codex skills shared across repositories.
 
 - `change-impact-analysis`: Analyze a ticket's codebase impact and prepare its impact section.
 - `engineering-ticket`: Create or refine a repository-local source ticket before code changes.
+- `implementation-plan`: Turn a ticket and its impact analysis into ordered, verifiable subtasks.
 - `ponytail`: Prefer the smallest working implementation using YAGNI, existing code, standard-library, and native-platform solutions.
 - `ponytail-review`: Review a diff specifically for over-engineering.
 - `ponytail-audit`: Audit a repository for unnecessary complexity.

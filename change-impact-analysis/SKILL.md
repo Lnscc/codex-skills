@@ -74,3 +74,8 @@ Return a `## Change impact` section containing:
 - risks, open decisions, and unknowns;
 - a compact dependency path or Mermaid diagram only when it makes the impact
   materially easier to understand.
+
+Keep the section proportional to the change. For a read-only request, return it
+without editing files. When the user asks to update or prepare the ticket, add or
+replace this section in the existing ticket instead of creating a separate
+report. Preserve the ticket's requirements and all unrelated content.
