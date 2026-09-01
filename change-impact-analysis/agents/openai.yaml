@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Impact Analysis"
+  short_description: "Map a proposed change to its codebase impact"
+  default_prompt: "Use $change-impact-analysis to map this proposed change to affected architecture, risks, and open decisions."

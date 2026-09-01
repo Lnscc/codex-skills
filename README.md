@@ -4,6 +4,7 @@ Personal Codex skills shared across repositories.
 
 ## Skills
 
+- `change-impact-analysis`: Map an engineering ticket to affected files, modules, interfaces, data, risks, and decisions.
 - `ponytail`: Prefer the smallest working implementation using YAGNI, existing code, standard-library, and native-platform solutions.
 - `ponytail-review`: Review a diff specifically for over-engineering.
 - `ponytail-audit`: Audit a repository for unnecessary complexity.
