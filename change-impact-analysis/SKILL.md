@@ -6,7 +6,8 @@ description: >
   APIs, data models, migrations, tests, risks, and open decisions. Use when the
   user asks what a ticket touches, what could break, or wants an impact report
   before coding. A diff may provide additional evidence but does not replace
-  the ticket. This skill analyzes and reports; it does not create tickets,
+  the ticket. The analysis is returned as a section for that same ticket and is
+  written there only when requested. This skill does not create tickets,
   implement changes, or approve designs.
 ---
 
@@ -55,25 +56,21 @@ decision usefulness, not for a long inventory of loosely related files.
 - Distinguish current code facts from recommended changes.
 - Keep technical assumptions in the analysis. Treat unclear product behavior,
   changed acceptance criteria, and scope expansion as ticket issues rather than
-  silently resolving them in the report.
+  silently resolving them in the analysis.
 - Reference ticket requirements instead of creating a second authoritative copy
   of them. Report contradictions between ticket and code explicitly.
-- Do not modify code, create a plan, approve the design, or broaden the task
-  unless the user separately asks for that work.
+- Do not modify production code, create a plan, approve the design, or broaden
+  the task unless the user separately asks for that work.
 
 ## Output
 
-Lead with the expected blast radius and the most consequential risk. Then show:
+Return a `## Change impact` section containing:
 
-- the ticket reference, interpreted impact, and technical assumptions;
+- a summary of the blast radius and the most consequential risk;
+- technical assumptions and ticket issues;
 - direct, indirect, and conditional impacts with evidence;
 - API and data consequences where applicable;
 - test and operational consequences where applicable;
 - risks, open decisions, and unknowns;
 - a compact dependency path or Mermaid diagram only when it makes the impact
   materially easier to understand.
-
-Keep ordinary answers proportional to the change. For a complete, persisted,
-or machine-readable report, read
-[references/impact-report.md](references/impact-report.md) and follow its
-format. If the user supplies a required artifact schema, use that schema instead.
