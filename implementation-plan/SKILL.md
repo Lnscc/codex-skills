@@ -1,11 +1,11 @@
 ---
 name: implementation-plan
 description: >
-  Turn an existing engineering ticket and its change-impact analysis into an
+  Turn an existing YAML engineering ticket and its `impact` mapping into an
   ordered, executable implementation plan with scoped subtasks, dependencies,
   acceptance criteria, and verification. Use when the user asks how a ticket
   should be implemented, wants work broken down, or needs a plan before coding.
-  The plan is returned as a section for that same ticket and is written there
+  The plan is returned as a `plan` mapping for that same ticket and is written there
   only when requested. This skill plans work; it does not create requirements,
   analyze architectural impact from scratch, or modify production code.
 ---
@@ -18,7 +18,7 @@ of truth; the plan must not quietly expand or reinterpret it.
 
 ## Planning
 
-1. Locate and read the complete ticket. Require a `## Change impact` section or
+1. Locate and read the complete ticket. Require a top-level `impact` mapping or
    an equivalent repository-defined impact analysis. If it is missing or too
    incomplete to plan safely, report that prerequisite instead of guessing the
    affected architecture.
@@ -45,7 +45,7 @@ of truth; the plan must not quietly expand or reinterpret it.
 
 ## Output
 
-Return a `## Implementation plan` section containing:
+Return a `plan` YAML mapping containing:
 
 - a short approach summary;
 - assumptions, blockers, and decisions still required;
@@ -54,33 +54,34 @@ Return a `## Implementation plan` section containing:
 - acceptance criteria and verification for each subtask;
 - rollout or migration notes only when relevant.
 
-Use this shape unless the repository already defines one:
+Use the repository's existing schema when one exists. Otherwise use:
 
-```markdown
-## Implementation plan
-
-### Approach
-...
-
-### Blockers and decisions
-- ...
-
-### Subtasks
-
-#### PLAN-1: <Outcome>
-- Status: planned
-- Depends on: none
-- Affected areas: ...
-- Acceptance criteria:
-  - ...
-- Verification:
-  - ...
+```yaml
+plan:
+  summary: Short implementation approach
+  assumptions: []
+  blockers: []
+  decisionsRequired: []
+  subtasks:
+    - id: PROJECT-123-1
+      title: Concrete outcome
+      status: planned
+      outcome: What this subtask leaves working
+      affectedAreas: []
+      dependsOn: []
+      acceptanceCriteria:
+        - Verifiable subtask result
+      verification:
+        - Test or check proving completion
+  rollout: []
 ```
 
-Keep the section proportional to the ticket. For a read-only request, return it
-without editing files. When the user asks to update or prepare the ticket, add or
-replace this section in the existing ticket instead of creating a separate plan
-document. Preserve all requirements, impact findings, and unrelated content.
+Keep empty list fields as `[]` and keep the mapping proportional to the ticket.
+For a read-only request, return it without editing files. When the user asks to
+update or prepare the ticket, replace only the top-level `plan` mapping in the
+existing YAML ticket. Preserve `schemaVersion`, `ticket`, `impact`, and any
+unrelated fields, then parse the resulting YAML to verify its syntax. Never
+create a separate plan document.
 
 ## Boundaries
 

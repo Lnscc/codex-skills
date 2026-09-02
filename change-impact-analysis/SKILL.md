@@ -1,12 +1,12 @@
 ---
 name: change-impact-analysis
 description: >
-  Analyze an existing engineering ticket against its codebase and identify its
+  Analyze an existing YAML engineering ticket against its codebase and identify its
   architectural blast radius: affected files and modules, dependency paths,
   APIs, data models, migrations, tests, risks, and open decisions. Use when the
   user asks what a ticket touches, what could break, or wants an impact report
   before coding. A diff may provide additional evidence but does not replace
-  the ticket. The analysis is returned as a section for that same ticket and is
+  the ticket. The analysis is returned as an `impact` mapping for that same ticket and is
   written there only when requested. This skill does not create tickets,
   implement changes, or approve designs.
 ---
@@ -64,7 +64,7 @@ decision usefulness, not for a long inventory of loosely related files.
 
 ## Output
 
-Return a `## Change impact` section containing:
+Return an `impact` YAML mapping containing:
 
 - a summary of the blast radius and the most consequential risk;
 - technical assumptions and ticket issues;
@@ -75,7 +75,40 @@ Return a `## Change impact` section containing:
 - a compact dependency path or Mermaid diagram only when it makes the impact
   materially easier to understand.
 
-Keep the section proportional to the change. For a read-only request, return it
-without editing files. When the user asks to update or prepare the ticket, add or
-replace this section in the existing ticket instead of creating a separate
-report. Preserve the ticket's requirements and all unrelated content.
+Use the repository's existing schema when one exists. Otherwise use this shape,
+omitting individual object properties that do not apply while keeping empty
+top-level lists as `[]`:
+
+```yaml
+impact:
+  summary: Expected blast radius and most consequential risk
+  assumptions: []
+  ticketIssues: []
+  files:
+    - path: src/example.ts
+      scope: direct
+      confidence: confirmed
+      reason: Why this location is affected
+      expectedChange: What is expected to change
+  modules: []
+  interfaces: []
+  data: []
+  dependencies: []
+  verification: []
+  operations: []
+  risks: []
+  decisions: []
+  unknowns: []
+```
+
+Entries in `modules`, `interfaces`, `data`, and `dependencies` use the same
+`scope`, `confidence`, `reason`, and `expectedChange` fields plus the identity
+fields needed for that element. Risks state a title, severity, description, and
+mitigation when known. Decisions state the question, status, considered options,
+and resolution when decided.
+
+Keep the mapping proportional to the change. For a read-only request, return it
+without editing files. When the user asks to update or prepare the ticket,
+replace only the top-level `impact` mapping in the existing YAML ticket. Preserve
+`schemaVersion`, `ticket`, `plan`, and any unrelated fields, then parse the
+resulting YAML to verify its syntax. Never create a separate impact file.
