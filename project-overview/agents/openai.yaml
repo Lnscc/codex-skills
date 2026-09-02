@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Overview"
+  short_description: "Plan and maintain a living project overview"
+  default_prompt: "Use $project-overview to plan this project or refresh its Markdown overview from the current codebase."
