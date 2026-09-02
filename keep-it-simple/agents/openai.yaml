@@ -1,0 +1,4 @@
+interface:
+  display_name: "Keep It Simple"
+  short_description: "Keep code and writing simple, efficient, and minimal."
+  default_prompt: "Use $keep-it-simple to produce the smallest clear and complete result."
