@@ -19,6 +19,9 @@ Produce the smallest clear and complete result. Prioritize:
 - Remove filler, repetition, decorative structure, and unnecessary alternatives.
 - Make the smallest maintainable code change. Reuse existing patterns and native
   capabilities; avoid speculative abstractions, dependencies, and cleanup.
+- Prefer multiple cohesive files when that keeps individual files small and gives
+  each file a clear responsibility. Do not split trivial code or create needless
+  pass-through files.
 - Comment only on non-obvious intent. Test requested behavior and meaningful risks.
 - Keep skills short and self-contained. Add supporting files only when they reduce
   real repeated or conditional complexity.
