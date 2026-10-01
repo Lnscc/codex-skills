@@ -1,54 +1,67 @@
 ---
 name: engineering-ticket
 description: >
-  Create or refine one repository-local YAML ticket for a proposed code change.
-  Use to capture requirements, scope, constraints, acceptance criteria, and open
-  questions before impact analysis or planning. Do not analyze implementation
-  impact, plan work, or modify production code.
+  Create or refine one repository-local Markdown epic or engineering ticket.
+  Use to capture a product outcome or one proposed change before impact analysis
+  or planning. Do not analyze implementation impact, plan work, or modify code.
 ---
 
 # Engineering Ticket
 
-Create the smallest complete source of truth for the requested change.
+Create the smallest complete Markdown source of truth for the requested work.
 
 ## Workflow
 
-1. Follow repository ticket location, naming, ID, status, and schema conventions.
-   Without a convention, use `docs/tickets/<TICKET-ID>-<title-slug>.yaml` and
-   the fallback schema below.
-2. Refine an existing ticket for the same change instead of duplicating it.
-3. Use the supplied or repository-derived ID. Ask when no stable ID can be
-   determined.
-4. Capture only the problem, outcome, scope, observable acceptance criteria,
-   constraints, and open product questions.
-5. Separate known facts from assumptions. Do not guess implementation or resolve
-   unclear product behavior.
-6. Write or update exactly one ticket and validate its YAML.
+1. Read and follow the repository's ticket conventions, especially its ticket README.
+2. Create an epic only for a shared product outcome that requires multiple independently
+   verifiable tickets. Otherwise create a ticket.
+3. Refine an existing artifact for the same work instead of duplicating it.
+4. Follow repository location, naming, ID, status, and Markdown heading conventions.
+   Without a convention, use `docs/tickets/<ID>-<title-slug>.md` for tickets and
+   `docs/tickets/epics/<ID>-<title-slug>.md` for epics.
+5. Use the supplied or repository-derived ID. Ask when no stable ID can be determined.
+6. Capture only context, outcome, scope, observable success or acceptance criteria,
+   constraints, dependencies, and open product questions.
+7. Separate known facts from assumptions. Do not guess implementation or resolve unclear
+   product behavior.
+8. Write or update exactly one Markdown artifact and check its structure.
 
-## Fallback schema
+## Fallback ticket structure
 
-```yaml
-schemaVersion: 1
-ticket:
-  id: PROJECT-123
-  title: Short descriptive title
-  status: proposed
-  problem: Why the change is needed
-  goal: Observable outcome without implementation details
-  scope:
-    included:
-      - Required outcome
-    excluded:
-      - Explicit non-goal
-  acceptanceCriteria:
-    - Observable or verifiable result
-  constraints: []
-  openQuestions: []
+```markdown
+# PROJECT-123: Short descriptive title
+
+Status: proposed
+Epic: EPIC-001
+
+## Context
+## Goal
+## Scope
+## Acceptance criteria
+## Constraints
+## Exclusions
+## Open questions
 ```
 
-Keep empty lists as `[]`. Omit `impact` and `plan` until their workflows add
-them to the same file.
+Omit `Epic:` for standalone tickets and omit empty optional sections. Impact analysis and
+implementation planning add their own sections later.
 
-Do not add affected code, architecture, subtasks, or sequencing unless the
-repository schema requires them. Do not create external issues, change ticket
-status, or modify production code without a separate request.
+## Fallback epic structure
+
+```markdown
+# EPIC-001: Short product outcome
+
+Status: proposed
+
+## Context
+## Goal
+## Scope
+## Success criteria
+## Tickets
+## Exclusions
+## Open questions
+```
+
+Do not add affected code, architecture, implementation subtasks, or sequencing unless the
+repository convention requires them. Do not create external issues, change status, or modify
+production code without a separate request.

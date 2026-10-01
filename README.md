@@ -4,9 +4,9 @@ Personal Codex skills shared across repositories.
 
 ## Skills
 
-- `change-impact-analysis`: Analyze a YAML ticket's codebase impact and prepare its `impact` mapping.
-- `engineering-ticket`: Create or refine a repository-local YAML ticket before code changes.
-- `implementation-plan`: Turn a YAML ticket and its `impact` mapping into an executable `plan`.
+- `change-impact-analysis`: Analyze a Markdown ticket's codebase impact and add its impact section.
+- `engineering-ticket`: Create or refine a repository-local Markdown epic or ticket.
+- `implementation-plan`: Turn a Markdown ticket and its impact section into an executable plan.
 - `keep-it-simple`: Keep code, documentation, and other writing simple, efficient, and minimal.
 - `project-overview`: Plan a project and maintain its Markdown architecture, libraries, and workflows overview.
 - `ponytail`: Prefer the smallest working implementation using YAGNI, existing code, standard-library, and native-platform solutions.
@@ -18,18 +18,17 @@ Personal Codex skills shared across repositories.
 
 ## Ticket workflow
 
-One code change uses one repository-local YAML ticket. Each workflow skill owns
-one top-level mapping in that same file:
+One code change uses one repository-local Markdown ticket. A larger product outcome may use one
+epic with multiple tickets. Each workflow skill owns one part of the same ticket:
 
-```yaml
-schemaVersion: 1
-ticket: # engineering-ticket
-impact: # change-impact-analysis
-plan: # implementation-plan
+```text
+Ticket requirements         # engineering-ticket
+## Impact analysis          # change-impact-analysis
+## Implementation plan     # implementation-plan
 ```
 
-The skills preserve mappings owned by the other workflow stages and never
-create parallel ticket, impact, or plan files.
+The skills preserve sections owned by the other workflow stages and never create parallel impact
+or plan files.
 
 ## Use as repository skills
 

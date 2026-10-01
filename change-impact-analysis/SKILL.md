@@ -1,8 +1,8 @@
 ---
 name: change-impact-analysis
 description: >
-  Analyze an existing YAML engineering ticket against its codebase and return
-  an evidence-backed impact mapping. Use before planning or coding to identify
+  Analyze an existing Markdown engineering ticket against its codebase and return
+  an evidence-backed impact section. Use before planning or coding to identify
   affected code, interfaces, data, tests, risks, and open decisions. Do not
   create tickets, plans, or production changes.
 ---
@@ -31,35 +31,31 @@ Map the ticket to the smallest evidence-backed set of affected areas.
 
 ## Output
 
-Use the repository schema when available. Otherwise return:
+Use the repository convention when available. Otherwise return a proportional Markdown section:
 
-```yaml
-impact:
-  summary: Expected blast radius and main risk
-  assumptions: []
-  ticketIssues: []
-  files:
-    - path: src/example.ts
-      scope: direct
-      confidence: confirmed
-      reason: Why it is affected
-      expectedChange: What changes
-  modules: []
-  interfaces: []
-  data: []
-  dependencies: []
-  verification: []
-  operations: []
-  risks: []
-  decisions: []
-  unknowns: []
+```markdown
+## Impact analysis
+
+### Summary
+
+Expected blast radius and main risk.
+
+### Affected areas
+
+- `src/example.ts#symbol` — direct, confirmed: reason; expected change
+
+### Verification
+
+- Check that proves the affected behavior.
+
+### Risks and decisions
+
+- Risk, unresolved decision, or unknown.
 ```
 
-Use the same `scope`, `confidence`, `reason`, and `expectedChange` fields
-for other affected elements. Keep the mapping proportional and avoid unsupported
-file inventories.
+Add assumptions, ticket conflicts, interfaces, data, dependencies, operations, or unknowns only
+when relevant. Keep the analysis proportional and avoid unsupported file inventories.
 
-Return the mapping without writing for read-only requests. When asked to update
-the ticket, replace only its top-level `impact` mapping, preserve all other
-fields, and validate the YAML. Never create a separate impact file or modify
-production code.
+Return the section without writing for read-only requests. When asked to update the ticket,
+replace only its impact-analysis section and preserve the rest of the Markdown file. Never create
+a separate impact file or modify production code.
