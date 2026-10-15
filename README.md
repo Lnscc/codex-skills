@@ -4,9 +4,9 @@ Personal Codex skills shared across repositories.
 
 ## Skills
 
-- `change-impact-analysis`: Analyze a Markdown ticket's codebase impact and add its impact section.
-- `engineering-ticket`: Create or refine a repository-local Markdown epic or ticket.
-- `implementation-plan`: Turn a Markdown ticket and its impact section into an executable plan.
+- `change-impact-analysis`: Analyze a Linear issue's codebase impact and maintain its `Impact` section.
+- `engineering-ticket`: Create or refine a Linear issue before code changes.
+- `implementation-plan`: Turn a Linear issue and its `Impact` section into an executable `Plan`.
 - `keep-it-simple`: Keep code, documentation, and other writing simple, efficient, and minimal.
 - `project-overview`: Plan a project and maintain its Markdown architecture, libraries, and workflows overview.
 - `ponytail`: Prefer the smallest working implementation using YAGNI, existing code, standard-library, and native-platform solutions.
@@ -18,17 +18,18 @@ Personal Codex skills shared across repositories.
 
 ## Ticket workflow
 
-One code change uses one repository-local Markdown ticket. A larger product outcome may use one
-epic with multiple tickets. Each workflow skill owns one part of the same ticket:
+One code change uses one Linear issue as its source of truth. Each workflow
+skill owns one Markdown section in that issue's description:
 
-```text
-Ticket requirements         # engineering-ticket
-## Impact analysis          # change-impact-analysis
-## Implementation plan     # implementation-plan
+```markdown
+## Ticket
+## Impact
+## Plan
 ```
 
-The skills preserve sections owned by the other workflow stages and never create parallel impact
-or plan files.
+The skills preserve sections owned by the other workflow stages and never
+create repository-local ticket, impact, or plan files. Linear write access is
+required to persist changes; without it, the skills return an unsaved draft.
 
 ## Use as repository skills
 

@@ -1,60 +1,65 @@
 ---
 name: implementation-plan
 description: >
-  Turn an existing Markdown ticket and its impact-analysis section into the smallest
-  executable implementation plan. Use to define ordered subtasks, dependencies,
+  Turn an existing Linear issue and its impact section into the smallest
+  executable implementation plan. Use to define ordered steps, dependencies,
   acceptance criteria, and verification before coding. Do not create
   requirements, redo impact analysis, or modify production code.
 ---
 
 # Implementation Plan
 
-Plan only the work required by the ticket and its evidence-backed impact.
+Plan only the work required by the issue and its evidence-backed impact.
 
 ## Planning
 
-1. Require the complete ticket and a usable impact-analysis section. Report
-   missing or unsafe prerequisites instead of guessing.
+1. Require an existing Linear issue with complete `## Ticket` and usable
+   `## Impact` sections. Report missing or unsafe prerequisites instead of
+   guessing.
 2. Read repository guidance and inspect referenced code only as needed to confirm
    the impact is current. Report conflicts.
 3. Keep unresolved product decisions as blockers or explicit alternatives.
 4. Use existing boundaries and extension points; avoid speculative abstractions
    and unrelated cleanup.
-5. Create the fewest independently verifiable subtasks. Each states its outcome,
+5. Create the fewest independently verifiable steps. Each states its outcome,
    affected areas, dependencies, acceptance criteria, and verification.
 6. Include compatibility, migrations, authorization, generated artifacts,
    observability, rollout, or rollback only when the impact requires them.
-7. Cover every ticket acceptance criterion and trace every subtask to the ticket
-   or impact analysis.
+7. Cover every issue acceptance criterion and trace every step to the ticket or
+   impact section.
 
 ## Output
 
-Use the repository convention when available. Otherwise return a proportional Markdown section:
+Use a concise `## Plan` Markdown section in the Linear issue description:
 
 ```markdown
-## Implementation plan
+## Plan
 
 ### Approach
-
 Short implementation approach.
 
 ### Steps
+1. **Concrete outcome**
+   - Affected areas: `src/example.ts`
+   - Depends on: None
+   - Acceptance: Verifiable result
+   - Verification: Check proving completion
 
-1. **PROJECT-123-1: Concrete outcome**
-   - Affected areas: ...
-   - Depends on: ...
-   - Acceptance: verifiable result
-   - Verification: check proving completion
+### Assumptions
+- None
+
+### Blockers and decisions required
+- None
 
 ### Rollout
-
-- Required rollout or rollback action.
+- None
 ```
 
-Add assumptions, blockers, required decisions, rollout, or rollback only when relevant. Keep the
-plan proportional to the change. Return it without writing for read-only requests. When asked to
-update the ticket, replace only its implementation-plan section and preserve the rest of the
-Markdown file.
+Keep the plan proportional to the change. Return it without writing for read-only
+requests. When asked to update the issue, replace only its `## Plan` section and
+preserve the title, fields, and all other description sections. If Linear is
+unavailable, return the section and state that it was not saved.
 
-Do not create a second ticket or plan file, invent requirements, resolve product decisions,
-modify production code, mark steps complete, or change ticket status without a separate request.
+Do not create another issue, sub-issues, comments, or plan files; invent
+requirements; resolve product decisions; modify production code; mark steps
+complete; or change issue status without a separate request.

@@ -1,20 +1,21 @@
 ---
 name: change-impact-analysis
 description: >
-  Analyze an existing Markdown engineering ticket against its codebase and return
-  an evidence-backed impact section. Use before planning or coding to identify
+  Analyze an existing Linear engineering issue against its codebase and add an
+  evidence-backed impact section. Use before planning or coding to identify
   affected code, interfaces, data, tests, risks, and open decisions. Do not
-  create tickets, plans, or production changes.
+  create issues, plans, or production changes.
 ---
 
 # Change Impact Analysis
 
-Map the ticket to the smallest evidence-backed set of affected areas.
+Map the issue to the smallest evidence-backed set of affected areas.
 
 ## Analysis
 
-1. Require an existing ticket; do not replace it with a prompt, diff, or plan.
-2. Read repository guidance, the ticket, and only relevant architecture context.
+1. Require an existing Linear issue identifier or URL; do not replace it with a
+   prompt, diff, or plan.
+2. Read repository guidance, the issue, and only relevant architecture context.
 3. Locate concrete entry points, then trace relevant callers, callees, shared
    types, persisted data, configuration, generated code, and tests.
 4. Classify each impact as:
@@ -26,36 +27,45 @@ Map the ticket to the smallest evidence-backed set of affected areas.
 6. Include compatibility, migrations, authorization, validation, caching,
    asynchronous work, observability, deployment, or generated artifacts only
    when relevant.
-7. Record assumptions, ticket conflicts, risks, and unresolved decisions. Do not
+7. Record assumptions, issue conflicts, risks, and unresolved decisions. Do not
    invent product behavior or prescribe unnecessary abstractions.
 
 ## Output
 
-Use the repository convention when available. Otherwise return a proportional Markdown section:
+Use a concise `## Impact` Markdown section in the Linear issue description:
 
 ```markdown
-## Impact analysis
+## Impact
 
 ### Summary
-
 Expected blast radius and main risk.
 
 ### Affected areas
+- `src/example.ts` — direct, confirmed: why it is affected; expected change.
 
-- `src/example.ts#symbol` — direct, confirmed: reason; expected change
+### Interfaces and data
+- None
 
 ### Verification
+- Check that demonstrates the affected behavior.
 
-- Check that proves the affected behavior.
+### Assumptions and issue conflicts
+- None
 
 ### Risks and decisions
+- None
 
-- Risk, unresolved decision, or unknown.
+### Unknowns
+- None
 ```
 
-Add assumptions, ticket conflicts, interfaces, data, dependencies, operations, or unknowns only
-when relevant. Keep the analysis proportional and avoid unsupported file inventories.
+For every affected element, include scope (`direct`, `indirect`, or
+`conditional`), confidence (`confirmed`, `inferred`, or `unknown`), reason, and
+expected change. Add headings for modules, dependencies, operations, migrations,
+or other concerns only when relevant. Avoid unsupported inventories.
 
-Return the section without writing for read-only requests. When asked to update the ticket,
-replace only its impact-analysis section and preserve the rest of the Markdown file. Never create
-a separate impact file or modify production code.
+Return the section without writing for read-only requests. When asked to update
+the issue, replace only its `## Impact` section and preserve the title, fields,
+and all other description sections. If Linear is unavailable, return the section
+and state that it was not saved. Never create a separate artifact, comment, or
+issue, and never modify production code.
