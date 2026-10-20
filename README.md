@@ -34,6 +34,10 @@ New issues are created in `Todo`, or in `Backlog` when explicitly requested.
 Whenever a workflow edits an existing issue, it sets that issue's status to
 `In Progress`. Read-only requests do not change the issue.
 
+Every engineering ticket belongs to the correct epic. The ticket workflow uses
+an existing matching epic when available. If none exists, it proposes an epic
+and asks for confirmation before creating it and associating the ticket.
+
 ## Use as repository skills
 
 Add this repository as a submodule at the Codex repository-skill path:

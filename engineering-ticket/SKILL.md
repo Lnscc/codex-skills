@@ -17,16 +17,25 @@ Create the smallest complete Linear issue for the requested change.
    when relevant, project. Ask only when the destination is ambiguous.
 2. Search for an existing issue for the same change and refine it instead of
    creating a duplicate.
-3. Capture only the problem, outcome, scope, observable acceptance criteria,
+3. Ensure the ticket belongs to the correct epic. Search for a relevant
+   existing epic and use it when there is an unambiguous match. If no suitable
+   epic exists, propose the new epic's title and scope, ask the user to confirm
+   its creation, and stop before creating the epic or creating or modifying the
+   ticket. Once confirmed, create the epic, then create or refine the ticket and
+   associate it with that epic. Never leave a created or refined ticket without
+   an epic.
+4. Capture only the problem, outcome, scope, observable acceptance criteria,
    constraints, and open product questions.
-4. Separate known facts from assumptions. Do not guess implementation or resolve
+5. Separate known facts from assumptions. Do not guess implementation or resolve
    unclear product behavior.
-5. On creation, let Linear assign the issue identifier and set the issue status
+6. On creation, let Linear assign the issue identifier and set the issue status
    to `Todo`, or to `Backlog` when the user explicitly requests it. When
    refining an existing issue, set its status to `In Progress` before writing
    the requested changes.
-6. Write or update exactly one issue. Preserve its fields and every description
-   section outside `## Ticket` unless the user asks to change them.
+7. Write or update exactly one ticket. The only additional issue this workflow
+   may create is the user-confirmed epic required by step 3. Preserve ticket
+   fields and every description section outside `## Ticket` unless the user
+   asks to change them.
 
 ## Issue format
 
