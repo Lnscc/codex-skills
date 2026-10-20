@@ -21,8 +21,10 @@ Create the smallest complete Linear issue for the requested change.
    constraints, and open product questions.
 4. Separate known facts from assumptions. Do not guess implementation or resolve
    unclear product behavior.
-5. On creation, let Linear assign the issue identifier and preserve the team's
-   default status unless the user requests another status.
+5. On creation, let Linear assign the issue identifier and set the issue status
+   to `Todo`, or to `Backlog` when the user explicitly requests it. When
+   refining an existing issue, set its status to `In Progress` before writing
+   the requested changes.
 6. Write or update exactly one issue. Preserve its fields and every description
    section outside `## Ticket` unless the user asks to change them.
 
@@ -62,7 +64,8 @@ Keep the content proportional. Use `None` rather than inventing entries. Omit
 `## Impact` and `## Plan` until their workflows add them.
 
 Do not add affected code, architecture, subtasks, or sequencing unless the
-user's Linear convention requires them. Do not create sub-issues, change issue
-status, or modify production code without a separate request. If Linear is not
-available, return a ready-to-create issue draft and state that it was not saved;
-never fall back to a repository ticket file.
+user's Linear convention requires them. Apart from the creation and editing
+status transitions above, do not create sub-issues, change issue status, or
+modify production code without a separate request. If Linear is not available,
+return a ready-to-create issue draft and state that it was not saved; never fall
+back to a repository ticket file.

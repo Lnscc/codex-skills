@@ -56,10 +56,12 @@ Short implementation approach.
 ```
 
 Keep the plan proportional to the change. Return it without writing for read-only
-requests. When asked to update the issue, replace only its `## Plan` section and
-preserve the title, fields, and all other description sections. If Linear is
-unavailable, return the section and state that it was not saved.
+requests. When asked to update the issue, set its status to `In Progress`,
+replace only its `## Plan` section, and preserve the title, other fields, and all
+other description sections. If Linear is unavailable, return the section and
+state that it was not saved.
 
 Do not create another issue, sub-issues, comments, or plan files; invent
 requirements; resolve product decisions; modify production code; mark steps
-complete; or change issue status without a separate request.
+complete; or change issue status beyond setting the worked-on issue to
+`In Progress` without a separate request.

@@ -30,6 +30,9 @@ skill owns one Markdown section in that issue's description:
 The skills preserve sections owned by the other workflow stages and never
 create repository-local ticket, impact, or plan files. Linear write access is
 required to persist changes; without it, the skills return an unsaved draft.
+New issues are created in `Todo`, or in `Backlog` when explicitly requested.
+Whenever a workflow edits an existing issue, it sets that issue's status to
+`In Progress`. Read-only requests do not change the issue.
 
 ## Use as repository skills
 

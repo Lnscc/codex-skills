@@ -65,7 +65,7 @@ expected change. Add headings for modules, dependencies, operations, migrations,
 or other concerns only when relevant. Avoid unsupported inventories.
 
 Return the section without writing for read-only requests. When asked to update
-the issue, replace only its `## Impact` section and preserve the title, fields,
-and all other description sections. If Linear is unavailable, return the section
-and state that it was not saved. Never create a separate artifact, comment, or
-issue, and never modify production code.
+the issue, set its status to `In Progress`, replace only its `## Impact` section,
+and preserve the title, other fields, and all other description sections. If
+Linear is unavailable, return the section and state that it was not saved. Never
+create a separate artifact, comment, or issue, and never modify production code.
