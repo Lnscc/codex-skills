@@ -22,6 +22,13 @@ Produce the smallest clear and complete result. Prioritize:
 - Prefer multiple cohesive files when that keeps individual files small and gives
   each file a clear responsibility. Do not split trivial code or create needless
   pass-through files.
+- Keep UI components small and focused on one cohesive responsibility. Extract
+  independently meaningful UI sections, behavior, or state ownership into
+  clearly named components, and keep state and side effects with their smallest
+  natural owner.
+- Prefer composition over large components with many conditional branches. Do
+  not optimize for the fewest files, and do not extract trivial wrappers or
+  components that only forward props.
 - Comment only on non-obvious intent. Test requested behavior and meaningful risks.
 - Keep skills short and self-contained. Add supporting files only when they reduce
   real repeated or conditional complexity.
