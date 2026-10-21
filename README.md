@@ -4,10 +4,11 @@ Personal Codex skills shared across repositories.
 
 ## Skills
 
-- `change-impact-analysis`: Analyze a Linear issue's codebase impact and maintain its `Impact` section.
-- `engineering-ticket`: Create or refine a Linear issue before code changes.
-- `implementation-plan`: Turn a Linear issue and its `Impact` section into an executable `Plan`.
+- `change-impact-analysis`: Analyze an engineering issue's codebase impact and return its `Impact` section.
+- `engineering-ticket`: Draft or refine the requirements in an engineering issue's `Ticket` section.
+- `implementation-plan`: Turn an issue and its `Impact` section into an executable `Plan` section.
 - `keep-it-simple`: Keep code, documentation, and other writing simple, efficient, and minimal.
+- `product-owner`: Orchestrate engineering tickets and own their Linear lifecycle, priority, status, and epic placement.
 - `project-overview`: Plan a project and maintain its Markdown architecture, libraries, and workflows overview.
 - `ponytail`: Prefer the smallest working implementation using YAGNI, existing code, standard-library, and native-platform solutions.
 - `ponytail-review`: Review a diff specifically for over-engineering.
@@ -18,8 +19,9 @@ Personal Codex skills shared across repositories.
 
 ## Ticket workflow
 
-One code change uses one Linear issue as its source of truth. Each workflow
-skill owns one Markdown section in that issue's description:
+One code change uses one Linear issue as its source of truth. The Product Owner
+coordinates the workflow and owns all Linear reads and writes. The specialist
+skills return one Markdown section each:
 
 ```markdown
 ## Ticket
@@ -27,16 +29,18 @@ skill owns one Markdown section in that issue's description:
 ## Plan
 ```
 
-The skills preserve sections owned by the other workflow stages and never
-create repository-local ticket, impact, or plan files. Linear write access is
-required to persist changes; without it, the skills return an unsaved draft.
-New issues are created in `Todo`, or in `Backlog` when explicitly requested.
-Whenever a workflow edits an existing issue, it sets that issue's status to
-`In Progress`. Read-only requests do not change the issue.
+`engineering-ticket` returns `## Ticket`, `change-impact-analysis` returns
+`## Impact`, and `implementation-plan` returns `## Plan`. They never mutate
+Linear or create repository-local ticket, impact, or plan files. The
+`product-owner` skill assembles their output, preserves unrelated content, and
+updates the issue when the user requests a write. Without Linear access, it
+returns an unsaved draft.
 
-Every engineering ticket belongs to the correct epic. The ticket workflow uses
-an existing matching epic when available. If none exists, it proposes an epic
-and asks for confirmation before creating it and associating the ticket.
+The Product Owner manages status according to the actual work state; editing,
+refinement, impact analysis, and planning do not by themselves move an issue to
+`In Progress`. It also owns prioritization and ensures every engineering ticket
+belongs to the correct epic. If no matching epic exists, it proposes one and
+asks for confirmation before creating it.
 
 ## Use as repository skills
 

@@ -1,10 +1,11 @@
 ---
 name: change-impact-analysis
 description: >
-  Analyze an existing Linear engineering issue against its codebase and add an
-  evidence-backed impact section. Use before planning or coding to identify
-  affected code, interfaces, data, tests, risks, and open decisions. Do not
-  create issues, plans, or production changes.
+  Analyze an existing engineering issue against its codebase and produce an
+  evidence-backed Impact section. Use before planning or coding to identify
+  affected code, interfaces, data, tests, risks, and open decisions. Return
+  content to the Product Owner; do not modify Linear, create issues or plans, or
+  change production code.
 ---
 
 # Change Impact Analysis
@@ -64,8 +65,7 @@ For every affected element, include scope (`direct`, `indirect`, or
 expected change. Add headings for modules, dependencies, operations, migrations,
 or other concerns only when relevant. Avoid unsupported inventories.
 
-Return the section without writing for read-only requests. When asked to update
-the issue, set its status to `In Progress`, replace only its `## Impact` section,
-and preserve the title, other fields, and all other description sections. If
-Linear is unavailable, return the section and state that it was not saved. Never
-create a separate artifact, comment, or issue, and never modify production code.
+Return only the `## Impact` section and never write to Linear or a repository
+artifact. The `product-owner` skill owns description updates, priority, status,
+epic placement, and all other issue fields. Never create a comment or issue, and
+never modify production code.

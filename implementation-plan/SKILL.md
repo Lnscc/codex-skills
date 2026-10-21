@@ -3,8 +3,9 @@ name: implementation-plan
 description: >
   Turn an existing Linear issue and its impact section into the smallest
   executable implementation plan. Use to define ordered steps, dependencies,
-  acceptance criteria, and verification before coding. Do not create
-  requirements, redo impact analysis, or modify production code.
+  acceptance criteria, and verification before coding. Return the Plan section
+  to the Product Owner; do not modify Linear, create requirements, redo impact
+  analysis, or change production code.
 ---
 
 # Implementation Plan
@@ -55,13 +56,11 @@ Short implementation approach.
 - None
 ```
 
-Keep the plan proportional to the change. Return it without writing for read-only
-requests. When asked to update the issue, set its status to `In Progress`,
-replace only its `## Plan` section, and preserve the title, other fields, and all
-other description sections. If Linear is unavailable, return the section and
-state that it was not saved.
+Keep the plan proportional to the change. Return only the `## Plan` section and
+never write to Linear or a repository artifact. The `product-owner` skill owns
+description updates, priority, status, epic placement, and all other issue
+fields.
 
 Do not create another issue, sub-issues, comments, or plan files; invent
 requirements; resolve product decisions; modify production code; mark steps
-complete; or change issue status beyond setting the worked-on issue to
-`In Progress` without a separate request.
+complete; or change issue status.

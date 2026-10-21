@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Owner"
+  short_description: "Manage and prioritize engineering tickets"
+  default_prompt: "Use $product-owner to triage this ticket, update its content, priority, epic, and status."
