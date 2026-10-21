@@ -55,10 +55,12 @@ Those skills return content only. This skill performs every Linear mutation.
    its returned section without letting it change Linear.
 5. Assess readiness, priority, dependencies, epic placement, and status. Make
    each decision from available evidence and identify material uncertainty.
-6. Immediately before a write, read the current issue again. Apply only the
+6. For implementation work, synchronize status at the lifecycle boundaries
+   defined below without requesting confirmation.
+7. Immediately before a write, read the current issue again. Apply only the
    requested field changes and section replacements, preserving concurrent and
    unrelated content.
-7. Report the issue identifier, resulting lifecycle state, priority, epic, and
+8. Report the issue identifier, resulting lifecycle state, priority, epic, and
    exactly which sections or fields changed. If Linear is unavailable, return a
    ready-to-apply draft and state that it was not saved.
 
@@ -75,8 +77,21 @@ Otherwise, base a proposed transition on the real work state:
 
 Map these meanings to the team's actual workflow states. Refinement, impact
 analysis, planning, prioritization, or editing alone never means work is
-`In Progress`. Do not mark work `Done`, canceled, or duplicate without clear
-evidence or an explicit request. Ask before a materially ambiguous transition.
+`In Progress`.
+
+For implementation work, apply these transitions automatically:
+
+- Immediately before implementation changes begin, move the issue to
+  `In Progress` without asking.
+- When the implemented change is verified on the repository's default branch,
+  move the issue to `Done` without asking.
+- Until the change reaches the default branch, keep the issue `In Progress`
+  unless the user explicitly requests another valid state.
+
+Never commit, push, merge, or otherwise put changes on the default branch merely
+to trigger `Done`; source-control mutations require their own authorization.
+Do not mark work canceled or duplicate without clear evidence or an explicit
+request. Ask before a materially ambiguous transition.
 
 ## Priority
 
