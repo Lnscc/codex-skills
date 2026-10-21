@@ -22,6 +22,9 @@ Produce the smallest clear and complete result. Prioritize:
 - Prefer multiple cohesive files when that keeps individual files small and gives
   each file a clear responsibility. Do not split trivial code or create needless
   pass-through files.
+- Place new files in meaningful directories based on their responsibility. Follow
+  the existing structure when available; otherwise group related files by feature
+  or domain.
 - Keep UI components small and focused on one cohesive responsibility. Extract
   independently meaningful UI sections, behavior, or state ownership into
   clearly named components, and keep state and side effects with their smallest
