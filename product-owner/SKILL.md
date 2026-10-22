@@ -120,6 +120,9 @@ leave a newly created engineering ticket without one.
 
 - Preserve description sections owned by other skills unless replacing the
   section returned by that skill.
+- Keep the `### Manual test` subsection supplied by `engineering-ticket` inside
+  every `## Ticket`; do not replace it with technical verification from the
+  implementation plan.
 - Never replace known facts with assumptions. Label unresolved product choices
   and keep them out of technical sections.
 - Do not create sub-issues, comments, milestones, or roadmap commitments unless

@@ -29,9 +29,10 @@ skills return one Markdown section each:
 ## Plan
 ```
 
-`engineering-ticket` returns `## Ticket`, `change-impact-analysis` returns
-`## Impact`, and `implementation-plan` returns `## Plan`. They never mutate
-Linear or create repository-local ticket, impact, or plan files. The
+`engineering-ticket` returns `## Ticket`, including concrete manual test steps;
+`change-impact-analysis` returns `## Impact`, and `implementation-plan` returns
+`## Plan`. They never mutate Linear or create repository-local ticket, impact,
+or plan files. The
 `product-owner` skill assembles their output, preserves unrelated content, and
 updates the issue when the user requests a write. Without Linear access, it
 returns an unsaved draft.

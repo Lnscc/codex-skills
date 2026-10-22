@@ -16,7 +16,7 @@ Draft the smallest complete `## Ticket` section for the requested change.
 
 1. Read the proposed change and, when supplied, the current issue content.
 2. Capture only the problem, outcome, scope, observable acceptance criteria,
-   constraints, and open product questions.
+   manual test procedure, constraints, and open product questions.
 3. Separate known facts from assumptions. Do not guess implementation or resolve
    unclear product behavior.
 4. Preserve valid existing requirements and tighten only the requested content.
@@ -48,6 +48,11 @@ Excluded:
 ### Acceptance criteria
 - [ ] Observable or verifiable result
 
+### Manual test
+1. Given a concrete starting state or prerequisite
+2. When the tester performs a user-visible action
+3. Then the observable result matches the acceptance criteria
+
 ### Constraints
 - None
 
@@ -57,6 +62,14 @@ Excluded:
 
 Keep the content proportional. Use `None` rather than inventing entries. Do not
 produce `## Impact` or `## Plan`.
+
+Always include `### Manual test`. Write concrete, executable steps from the
+tester's perspective, including necessary setup or test data and the expected
+result. Cover the main success path and add failure or boundary cases only when
+they materially affect acceptance. Keep implementation details and automated
+test commands out of this section. If the change cannot be tested manually,
+state `Not manually testable` and explain what observable evidence can verify
+it; do not omit the section.
 
 Do not add affected code, architecture, subtasks, or sequencing unless the
 user's issue format explicitly requires them. Return the proposed title and
