@@ -23,8 +23,8 @@ Map the issue to the smallest evidence-backed set of affected areas.
    - **direct**: required for the requested behavior;
    - **indirect**: connected to a direct impact;
    - **conditional**: depends on an explicit design choice.
-5. Cite paths and symbols. Mark findings **confirmed**, **inferred**, or
-   **unknown**, and explain non-obvious dependency paths.
+5. Cite paths and symbols. State confidence only for inferred or unknown
+   findings; confirmed findings need no label.
 6. Include compatibility, migrations, authorization, validation, caching,
    asynchronous work, observability, deployment, or generated artifacts only
    when relevant.
@@ -38,32 +38,18 @@ Use a concise `## Impact` Markdown section in the Linear issue description:
 ```markdown
 ## Impact
 
-### Summary
-Expected blast radius and main risk.
-
 ### Affected areas
-- `src/example.ts` — direct, confirmed: why it is affected; expected change.
-
-### Interfaces and data
-- None
-
-### Verification
-- Check that demonstrates the affected behavior.
-
-### Assumptions and issue conflicts
-- None
+- `src/example.ts#symbol` — direct: expected change and non-obvious reason.
 
 ### Risks and decisions
-- None
-
-### Unknowns
-- None
+- Only material risk, conflict, unknown, or required decision.
 ```
 
 For every affected element, include scope (`direct`, `indirect`, or
-`conditional`), confidence (`confirmed`, `inferred`, or `unknown`), reason, and
-expected change. Add headings for modules, dependencies, operations, migrations,
-or other concerns only when relevant. Avoid unsupported inventories.
+`conditional`) and expected change. Include a reason only when the relationship
+is not obvious. Add confidence for anything not confirmed. Omit empty headings,
+ticket summaries, acceptance criteria, verification steps, and unsupported
+inventories.
 
 Return only the `## Impact` section and never write to Linear or a repository
 artifact. The `product-owner` skill owns description updates, priority, status,

@@ -18,8 +18,8 @@ ticket and verify the resulting behavior.
 1. Read the repository instructions and inspect the working tree. Preserve
    unrelated and user-owned changes.
 2. Use `product-owner` to resolve the Linear issue and confirm that its
-   `## Ticket`, `## Impact`, and `## Plan` sections are usable. Let the owning
-   skills fill material gaps instead of inventing requirements or analysis.
+   `## Ticket`, `## Impact`, and `## Plan` sections are usable. Read each section
+   once, treat later sections as deltas, and fill only material gaps.
 3. Immediately before editing implementation files, have `product-owner` move
    the issue to `In Progress` according to the repository workflow.
 4. Confirm the plan still matches the current code. Resolve ordinary

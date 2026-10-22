@@ -19,9 +19,9 @@ Personal Codex skills shared across repositories.
 
 ## Ticket workflow
 
-One code change uses one Linear issue as its source of truth. The Product Owner
-coordinates the workflow and owns all Linear reads and writes. The specialist
-skills return one Markdown section each:
+One code change uses one concise Linear issue as its source of truth. Each fact
+is stored once: requirements in `Ticket`, code evidence in `Impact`, and
+execution details in `Plan`.
 
 ```markdown
 ## Ticket
@@ -29,13 +29,11 @@ skills return one Markdown section each:
 ## Plan
 ```
 
-`engineering-ticket` returns `## Ticket`, including concrete manual test steps;
-`change-impact-analysis` returns `## Impact`, and `implementation-plan` returns
-`## Plan`. They never mutate Linear or create repository-local ticket, impact,
-or plan files. The
-`product-owner` skill assembles their output, preserves unrelated content, and
-updates the issue when the user requests a write. Without Linear access, it
-returns an unsaved draft.
+The specialist skills return only their section and omit empty headings and
+repeated context. They never mutate Linear or create repository-local ticket,
+impact, or plan files. The `product-owner` skill assembles their output,
+preserves unrelated content, and owns all Linear reads and writes. Without
+Linear access, it returns an unsaved draft.
 
 The Product Owner manages status according to the actual work state; editing,
 refinement, impact analysis, and planning do not by themselves move an issue to

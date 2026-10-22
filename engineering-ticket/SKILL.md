@@ -10,17 +10,22 @@ description: >
 
 # Engineering Ticket
 
-Draft the smallest complete `## Ticket` section for the requested change.
+Draft the smallest `## Ticket` section that makes the requested outcome
+unambiguous and testable.
 
 ## Workflow
 
 1. Read the proposed change and, when supplied, the current issue content.
-2. Capture only the problem, outcome, scope, observable acceptance criteria,
-   manual test procedure, constraints, and open product questions.
-3. Separate known facts from assumptions. Do not guess implementation or resolve
+2. Summarize the problem and desired outcome in one short context paragraph.
+3. Add only observable acceptance criteria that are not already implied by a
+   broader criterion.
+4. Add constraints, exclusions, or open product questions only when they change
+   implementation or acceptance. Omit empty headings.
+5. Separate known facts from assumptions. Do not guess implementation or resolve
    unclear product behavior.
-4. Preserve valid existing requirements and tighten only the requested content.
-5. Return a concise outcome-oriented title suggestion with the section when a
+6. Preserve valid existing requirements, but remove repetition and stale
+   scaffolding when refining a ticket.
+7. Return a concise outcome-oriented title suggestion with the section when a
    new title or issue is needed.
 
 ## Issue format
@@ -31,48 +36,21 @@ in the description:
 ```markdown
 ## Ticket
 
-### Problem
-Why the change is needed.
+Short context: current problem and desired outcome.
 
-### Goal
-Observable outcome without implementation details.
-
-### Scope
-
-Included:
-- Required outcome
-
-Excluded:
-- Explicit non-goal
-
-### Acceptance criteria
+### Acceptance
 - [ ] Observable or verifiable result
 
-### Manual test
-1. Given a concrete starting state or prerequisite
-2. When the tester performs a user-visible action
-3. Then the observable result matches the acceptance criteria
-
-### Constraints
-- None
-
-### Open questions
-- None
+### Notes
+- Constraint, explicit exclusion, or open question only when relevant
 ```
 
-Keep the content proportional. Use `None` rather than inventing entries. Do not
-produce `## Impact` or `## Plan`.
+Keep the context to one paragraph and prefer a small set of outcome-level
+criteria. Do not create separate problem, goal, scope, or manual-test sections
+when they would restate the same behavior. Omit `### Notes` when unused; never
+write placeholder values such as `None`.
 
-Always include `### Manual test`. Write concrete, executable steps from the
-tester's perspective, including necessary setup or test data and the expected
-result. Cover the main success path and add failure or boundary cases only when
-they materially affect acceptance. Keep implementation details and automated
-test commands out of this section. If the change cannot be tested manually,
-state `Not manually testable` and explain what observable evidence can verify
-it; do not omit the section.
-
-Do not add affected code, architecture, subtasks, or sequencing unless the
-user's issue format explicitly requires them. Return the proposed title and
-`## Ticket` section without writing to Linear or a repository file. The
-`product-owner` skill owns issue lookup, creation, description updates, epic
-placement, priority, status, and all other Linear fields.
+Do not add affected code, architecture, verification procedure, subtasks, or
+sequencing. Those belong to impact analysis or planning. Return the proposed
+title and `## Ticket` section without writing to Linear or a repository file.
+The `product-owner` skill owns all Linear operations and fields.

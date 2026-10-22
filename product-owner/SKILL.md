@@ -11,9 +11,9 @@ description: >
 
 # Product Owner
 
-Keep each engineering ticket accurate, prioritized, and in the right lifecycle
-state. Treat Linear as the source of truth and coordinate specialized skills for
-the ticket's content instead of reproducing their work.
+Keep each engineering ticket concise, accurate, prioritized, and in the right
+lifecycle state. Treat Linear as the source of truth. Store each fact once and
+have later sections add only new information.
 
 ## Ownership
 
@@ -53,6 +53,7 @@ Those skills return content only. This skill performs every Linear mutation.
 4. Obtain missing or stale description sections from the relevant specialized
    skills. Give each skill the current ticket and necessary evidence, then use
    its returned section without letting it change Linear.
+   Do not regenerate a usable section merely to normalize wording.
 5. Assess readiness, priority, dependencies, epic placement, and status. Make
    each decision from available evidence and identify material uncertainty.
 6. For implementation work, synchronize status at the lifecycle boundaries
@@ -60,9 +61,9 @@ Those skills return content only. This skill performs every Linear mutation.
 7. Immediately before a write, read the current issue again. Apply only the
    requested field changes and section replacements, preserving concurrent and
    unrelated content.
-8. Report the issue identifier, resulting lifecycle state, priority, epic, and
-   exactly which sections or fields changed. If Linear is unavailable, return a
-   ready-to-apply draft and state that it was not saved.
+8. Report the issue identifier and only the fields or lifecycle details relevant
+   to the request. If Linear is unavailable, return a ready-to-apply draft and
+   state that it was not saved.
 
 ## Status
 
@@ -120,9 +121,11 @@ leave a newly created engineering ticket without one.
 
 - Preserve description sections owned by other skills unless replacing the
   section returned by that skill.
-- Keep the `### Manual test` subsection supplied by `engineering-ticket` inside
-  every `## Ticket`; do not replace it with technical verification from the
-  implementation plan.
+- Keep `## Ticket` limited to context, acceptance, and material notes. Put code
+  evidence in `## Impact` and execution or verification details in `## Plan`.
+- Do not repeat ticket context or acceptance criteria in later sections. Link to
+  the owning section implicitly through the issue instead.
+- Omit empty subsections and placeholder values such as `None`.
 - Never replace known facts with assumptions. Label unresolved product choices
   and keep them out of technical sections.
 - Do not create sub-issues, comments, milestones, or roadmap commitments unless
