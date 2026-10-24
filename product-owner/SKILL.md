@@ -41,8 +41,9 @@ issue. This skill performs every Linear mutation.
    represents the same outcome and refine it instead of creating a duplicate.
 4. Obtain a missing or stale description from `engineering-ticket`. Do not
    regenerate usable requirements merely to normalize wording.
-5. Assess readiness, priority, dependencies, epic placement, and status. Make
-   each decision from available evidence and identify material uncertainty.
+5. Assess readiness, priority, dependencies, epic placement, labels, and status.
+   Apply unambiguously matching existing team labels. Make each decision from
+   available evidence and identify material uncertainty.
 6. For implementation work, synchronize status at the lifecycle boundaries
    defined below without requesting confirmation.
 7. Reuse the issue already fetched in the current task. Read it again before a
