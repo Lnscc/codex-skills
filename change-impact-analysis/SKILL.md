@@ -1,11 +1,10 @@
 ---
 name: change-impact-analysis
 description: >
-  Analyze an existing engineering issue against its codebase and produce an
-  evidence-backed Impact section. Use before planning or coding to identify
-  affected code, interfaces, data, tests, risks, and open decisions. Return
-  content to the Product Owner; do not modify Linear, create issues or plans, or
-  change production code.
+  Analyze an engineering ticket against its codebase and produce a temporary,
+  evidence-backed impact assessment for planning or coding. Identify affected
+  code, interfaces, data, tests, risks, and open decisions. Do not modify Linear,
+  create issues or plans, persist the analysis, or change production code.
 ---
 
 # Change Impact Analysis
@@ -14,9 +13,10 @@ Map the issue to the smallest evidence-backed set of affected areas.
 
 ## Analysis
 
-1. Require an existing Linear issue identifier or URL; do not replace it with a
-   prompt, diff, or plan.
-2. Read repository guidance, the issue, and only relevant architecture context.
+1. Require an existing Linear issue identifier, URL, or a current ticket snapshot
+   supplied by the caller. Do not fetch the issue again when the snapshot is
+   sufficient.
+2. Read repository guidance and only relevant architecture context.
 3. Locate concrete entry points, then trace relevant callers, callees, shared
    types, persisted data, configuration, generated code, and tests.
 4. Classify each impact as:
@@ -33,10 +33,10 @@ Map the issue to the smallest evidence-backed set of affected areas.
 
 ## Output
 
-Use a concise `## Impact` Markdown section in the Linear issue description:
+Return a concise working analysis to the invoking agent:
 
 ```markdown
-## Impact
+Impact
 
 ### Affected areas
 - `src/example.ts#symbol` — direct: expected change and non-obvious reason.
@@ -51,7 +51,5 @@ is not obvious. Add confidence for anything not confirmed. Omit empty headings,
 ticket summaries, acceptance criteria, verification steps, and unsupported
 inventories.
 
-Return only the `## Impact` section and never write to Linear or a repository
-artifact. The `product-owner` skill owns description updates, priority, status,
-epic placement, and all other issue fields. Never create a comment or issue, and
-never modify production code.
+Return only the working analysis. Never write it to Linear, a comment, or a
+repository artifact. Never modify production code.

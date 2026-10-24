@@ -2,18 +2,17 @@
 name: product-owner
 description: >
   Own the lifecycle of Linear engineering tickets: create and refine issues,
-  triage and prioritize work, manage status and epic placement, and coordinate
-  ticket content from the engineering-ticket, change-impact-analysis, and
-  implementation-plan skills. Use whenever an engineering ticket is created,
-  reviewed, enriched, prioritized, or moved through the workflow. Do not
-  implement production code.
+  triage and prioritize work, manage status and epic placement, and record
+  durable requirements or useful timeline comments. Use whenever an engineering
+  ticket is created, reviewed, enriched, prioritized, or moved through the
+  workflow. Do not implement production code.
 ---
 
 # Product Owner
 
 Keep each engineering ticket concise, accurate, prioritized, and in the right
-lifecycle state. Treat Linear as the source of truth. Store each fact once and
-have later sections add only new information.
+lifecycle state. Treat Linear as the source of truth for required behavior, not
+as storage for temporary engineering analysis or plans.
 
 ## Ownership
 
@@ -22,24 +21,19 @@ The Product Owner exclusively owns:
 - finding or creating the Linear issue;
 - duplicate detection;
 - team, project, epic, assignee, labels, priority, and status;
-- assembling and persisting the issue description;
+- assembling and persisting the stable issue description;
+- choosing between a description update and a timeline comment;
 - preserving unrelated fields and sections during updates.
 
-One code change uses one issue with these owned description sections:
+One code change uses one issue with this owned description section:
 
 ```markdown
 ## Ticket
-## Impact
-## Plan
 ```
 
-Use the specialized skills when their section is needed:
-
-- `engineering-ticket` drafts or refines `## Ticket`.
-- `change-impact-analysis` investigates the repository and returns `## Impact`.
-- `implementation-plan` turns the ticket and impact into `## Plan`.
-
-Those skills return content only. This skill performs every Linear mutation.
+Use `engineering-ticket` to draft or refine `## Ticket`. Impact analysis and
+implementation plans are temporary inputs for the implementing agent and must
+not be persisted in the issue. This skill performs every Linear mutation.
 
 ## Workflow
 
@@ -50,17 +44,15 @@ Those skills return content only. This skill performs every Linear mutation.
    destination or requested state cannot be inferred safely.
 3. Find the referenced issue. For new work, search for an existing issue that
    represents the same outcome and refine it instead of creating a duplicate.
-4. Obtain missing or stale description sections from the relevant specialized
-   skills. Give each skill the current ticket and necessary evidence, then use
-   its returned section without letting it change Linear.
-   Do not regenerate a usable section merely to normalize wording.
+4. Obtain a missing or stale `## Ticket` section from `engineering-ticket`.
+   Do not regenerate usable requirements merely to normalize wording.
 5. Assess readiness, priority, dependencies, epic placement, and status. Make
    each decision from available evidence and identify material uncertainty.
 6. For implementation work, synchronize status at the lifecycle boundaries
    defined below without requesting confirmation.
-7. Immediately before a write, read the current issue again. Apply only the
-   requested field changes and section replacements, preserving concurrent and
-   unrelated content.
+7. Reuse the issue already fetched in the current task. Read it again before a
+   write only when the snapshot may be stale or concurrent edits are plausible.
+   Apply only the requested changes and preserve unrelated content.
 8. Report the issue identifier and only the fields or lifecycle details relevant
    to the request. If Linear is unavailable, return a ready-to-apply draft and
    state that it was not saved.
@@ -119,16 +111,20 @@ leave a newly created engineering ticket without one.
 
 ## Ticket integrity
 
-- Preserve description sections owned by other skills unless replacing the
-  section returned by that skill.
-- Keep `## Ticket` limited to context, acceptance, and material notes. Put code
-  evidence in `## Impact` and execution or verification details in `## Plan`.
-- Do not repeat ticket context or acceptance criteria in later sections. Link to
-  the owning section implicitly through the issue instead.
+- Keep `## Ticket` limited to stable context, acceptance criteria, constraints,
+  and unresolved product questions.
+- Never persist impact analysis, implementation plans, code inventories, or
+  temporary engineering reasoning in the issue description or comments.
+- Update the description when required behavior or acceptance criteria change.
+- Use a concise comment for chronological information that should remain useful
+  without redefining the ticket: implementation results, verification evidence,
+  blockers, handoffs, and resolved questions. Do not post routine progress or
+  duplicate information.
 - Omit empty subsections and placeholder values such as `None`.
 - Never replace known facts with assumptions. Label unresolved product choices
-  and keep them out of technical sections.
-- Do not create sub-issues, comments, milestones, or roadmap commitments unless
-  requested.
+  in the ticket until resolved.
+- When an authorized Linear update is needed, choose the appropriate description
+  edit or comment without asking unless the destination is materially ambiguous.
+- Do not create sub-issues, milestones, or roadmap commitments unless requested.
 - Do not modify production code. Ticket completion does not authorize
   implementation.
