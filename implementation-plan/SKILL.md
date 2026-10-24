@@ -14,7 +14,7 @@ Plan only the work required by the issue and its evidence-backed impact.
 
 ## Planning
 
-1. Require a current `## Ticket` snapshot and usable working impact analysis.
+1. Require a current ticket snapshot and usable working impact analysis.
    Report missing or unsafe prerequisites instead of guessing. Do not fetch the
    issue again when the supplied snapshot is sufficient.
 2. Read repository guidance and inspect referenced code only as needed to

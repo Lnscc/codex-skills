@@ -25,15 +25,10 @@ The Product Owner exclusively owns:
 - choosing between a description update and a timeline comment;
 - preserving unrelated fields and sections during updates.
 
-One code change uses one issue with this owned description section:
-
-```markdown
-## Ticket
-```
-
-Use `engineering-ticket` to draft or refine `## Ticket`. Impact analysis and
-implementation plans are temporary inputs for the implementing agent and must
-not be persisted in the issue. This skill performs every Linear mutation.
+Use `engineering-ticket` to draft or refine the issue description directly,
+without a redundant `Ticket` heading. Impact analysis and implementation plans
+are temporary inputs for the implementing agent and must not be persisted in the
+issue. This skill performs every Linear mutation.
 
 ## Workflow
 
@@ -44,8 +39,8 @@ not be persisted in the issue. This skill performs every Linear mutation.
    destination or requested state cannot be inferred safely.
 3. Find the referenced issue. For new work, search for an existing issue that
    represents the same outcome and refine it instead of creating a duplicate.
-4. Obtain a missing or stale `## Ticket` section from `engineering-ticket`.
-   Do not regenerate usable requirements merely to normalize wording.
+4. Obtain a missing or stale description from `engineering-ticket`. Do not
+   regenerate usable requirements merely to normalize wording.
 5. Assess readiness, priority, dependencies, epic placement, and status. Make
    each decision from available evidence and identify material uncertainty.
 6. For implementation work, synchronize status at the lifecycle boundaries
@@ -109,10 +104,10 @@ when it is an unambiguous fit. If none exists, propose the epic's title and scop
 and ask for confirmation before creating it. Never silently create an epic or
 leave a newly created engineering ticket without one.
 
-## Ticket integrity
+## Issue integrity
 
-- Keep `## Ticket` limited to stable context, acceptance criteria, constraints,
-  and unresolved product questions.
+- Keep the description limited to stable context, acceptance criteria,
+  constraints, and unresolved product questions. Do not add a `Ticket` heading.
 - Never persist impact analysis, implementation plans, code inventories, or
   temporary engineering reasoning in the issue description or comments.
 - Update the description when required behavior or acceptance criteria change.

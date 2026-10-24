@@ -17,8 +17,8 @@ ticket and verify the resulting behavior.
 
 1. Read the repository instructions and inspect the working tree. Preserve
    unrelated and user-owned changes.
-2. Use `product-owner` to resolve the Linear issue and read its stable `## Ticket`
-   section once. Reuse that snapshot unless it may have changed.
+2. Use `product-owner` to resolve the Linear issue and read its stable description
+   once. Reuse that snapshot unless it may have changed.
 3. Immediately before editing implementation files, have `product-owner` move
    the issue to `In Progress` according to the repository workflow.
 4. Use `change-impact-analysis` and `implementation-plan` to derive only the

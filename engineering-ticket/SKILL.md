@@ -1,8 +1,8 @@
 ---
 name: engineering-ticket
 description: >
-  Draft or refine the Ticket section for one proposed engineering change. Use
-  to capture requirements, scope, constraints, acceptance criteria, and open
+  Draft or refine the description for one proposed engineering change. Use to
+  capture requirements, scope, constraints, acceptance criteria, and open
   questions before impact analysis or planning. Return content to the Product
   Owner; do not create or modify Linear issues, analyze implementation impact,
   plan work, or modify production code.
@@ -10,7 +10,7 @@ description: >
 
 # Engineering Ticket
 
-Draft the smallest `## Ticket` section that makes the requested outcome
+Draft the smallest issue description that makes the requested outcome
 unambiguous and testable.
 
 ## Workflow
@@ -25,17 +25,15 @@ unambiguous and testable.
    unclear product behavior.
 6. Preserve valid existing requirements, but remove repetition and stale
    scaffolding when refining a ticket.
-7. Return a concise outcome-oriented title suggestion with the section when a
+7. Return a concise outcome-oriented title suggestion with the description when a
    new title or issue is needed.
 
 ## Issue format
 
-Use a concise outcome-oriented issue title. Place the following Markdown section
-in the description:
+Use a concise outcome-oriented issue title. Use this Markdown directly as the
+description:
 
 ```markdown
-## Ticket
-
 Short context: current problem and desired outcome.
 
 ### Acceptance
@@ -52,5 +50,5 @@ write placeholder values such as `None`.
 
 Do not add affected code, architecture, verification procedure, subtasks, or
 sequencing. Those belong to impact analysis or planning. Return the proposed
-title and `## Ticket` section without writing to Linear or a repository file.
-The `product-owner` skill owns all Linear operations and fields.
+title and description without writing to Linear or a repository file. The
+`product-owner` skill owns all Linear operations and fields.
