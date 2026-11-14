@@ -2,23 +2,26 @@
 name: engineering-ticket
 description: >
   Draft or refine the description for one proposed engineering change. Use to
-  capture requirements, scope, constraints, acceptance criteria, and open
-  questions before impact analysis or planning. Return content to the Product
-  Owner; do not create or modify Linear issues, analyze implementation impact,
-  plan work, or modify production code.
+  explain the intended user experience and capture requirements, scope,
+  constraints, acceptance criteria, and open questions before impact analysis
+  or planning. Return content to the Product Owner; do not create or modify
+  Linear issues, analyze implementation impact, plan work, or modify production
+  code.
 ---
 
 # Engineering Ticket
 
-Draft the smallest issue description that makes the requested outcome
-unambiguous and testable.
+Draft the smallest issue description that explains the change from the user's
+perspective and makes the requested outcome unambiguous and testable.
 
 ## Workflow
 
 1. Read the proposed change and, when supplied, the current issue content.
-2. Summarize the problem and desired outcome in one short context paragraph.
+2. Summarize the user's problem, intended experience, and desired outcome in one
+   short context paragraph.
 3. Add only observable acceptance criteria that are not already implied by a
-   broader criterion.
+   broader criterion. Cover relevant interactions, feedback, and error states
+   when they materially affect the user experience.
 4. Add constraints, exclusions, or open product questions only when they change
    implementation or acceptance. Omit empty headings.
 5. Separate known facts from assumptions. Do not guess implementation or resolve
