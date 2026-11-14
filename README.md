@@ -16,6 +16,7 @@ Personal Codex skills shared across repositories.
 - `ponytail-debt`: Collect deferred `ponytail:` shortcuts into a debt ledger.
 - `ponytail-gain`: Show Ponytail's benchmark impact.
 - `ponytail-help`: Show Ponytail modes and commands.
+- `work-orchestrator`: Split complex work into dependency-aware agent assignments, coordinate execution, and verify the integrated result.
 
 ## Ticket workflow
 
