@@ -24,9 +24,10 @@ ticket and verify the resulting behavior.
 4. Use `change-impact-analysis` and `implementation-plan` to derive only the
    working context needed for this implementation. Keep both in the current
    chat; never write them to Linear or repository files.
-5. Confirm the plan matches the current code. Resolve ordinary implementation
-   details locally; report conflicts that materially change scope, behavior, or
-   acceptance criteria.
+5. Confirm the plan matches the current code. If the ticket does not prescribe a
+   technical solution, briefly confirm the proposed approach with the user before
+   editing implementation files. Resolve ordinary implementation details locally;
+   report conflicts that materially change scope, behavior, or acceptance criteria.
 6. Make only the code, configuration, documentation, generated artifact, and
    test changes required by the issue. Reuse existing patterns and avoid
    speculative abstractions or unrelated cleanup.
