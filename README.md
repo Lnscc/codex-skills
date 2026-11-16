@@ -56,3 +56,21 @@ New-Item -ItemType Junction -Path "$HOME\.agents\skills" -Target "<path-to-this-
 ```
 
 The repository remains the single versioned source for all personal skills.
+
+## Use versioned global instructions
+
+The personal Codex instructions are stored in [`global/AGENTS.md`](global/AGENTS.md).
+Link that file to Codex's global instruction path so edits remain versioned.
+On Windows, a hard link works without administrator privileges when both files
+are on the same drive:
+
+```powershell
+New-Item -ItemType HardLink `
+  -Path "$HOME\.codex\AGENTS.md" `
+  -Target "<path-to-this-repository>\global\AGENTS.md"
+```
+
+Recreate the hard link after cloning the repository on another computer.
+
+Repository-specific instructions still belong in the applicable repository's
+own `AGENTS.md`.
