@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codex Chat Namer"
+  short_description: "Benennt Codex-Chats kurz und eindeutig"
+  default_prompt: "Nutze $codex-chat-namer, um diesen Chat passend zu benennen."
+
+policy:
+  allow_implicit_invocation: true

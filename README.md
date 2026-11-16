@@ -1,10 +1,12 @@
 # Codex Skills
 
-Personal Codex skills shared across repositories.
+Personal Codex skills available across local repositories.
 
 ## Skills
 
 - `change-impact-analysis`: Analyze an engineering issue's codebase impact and return its `Impact` section.
+- `codex-chat-namer`: Keep a Codex chat title aligned with its current primary goal.
+- `developer`: Implement and verify an approved engineering change from its Linear ticket.
 - `engineering-ticket`: Draft or refine the requirements in an engineering issue's `Ticket` section.
 - `implementation-plan`: Turn an issue and its `Impact` section into an executable `Plan` section.
 - `keep-it-simple`: Keep code, documentation, and other writing simple, efficient, and minimal.
@@ -42,13 +44,15 @@ refinement, impact analysis, and planning do not by themselves move an issue to
 belongs to the correct epic. If no matching epic exists, it proposes one and
 asks for confirmation before creating it.
 
-## Use as repository skills
+## Use as personal global skills
 
-Add this repository as a submodule at the Codex repository-skill path:
+Codex discovers personal skills in `$HOME/.agents/skills`. Use this repository as
+that directory, or link that directory to the repository checkout. For example,
+on Windows PowerShell, when `$HOME/.agents/skills` does not exist:
 
-```sh
-git submodule add <repository-url> .agents/skills
-git submodule update --init --recursive
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.agents"
+New-Item -ItemType Junction -Path "$HOME\.agents\skills" -Target "<path-to-this-repository>"
 ```
 
-Each skill can also be installed individually from this repository.
+The repository remains the single versioned source for all personal skills.
