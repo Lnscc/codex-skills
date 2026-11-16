@@ -19,9 +19,18 @@ Der persönliche Obsidian-Vault liegt unter
 - Suche gezielt, statt den gesamten Vault zu laden.
 - Für technische Ist-Zustände sind aktueller Repository-Code und aktuelle
   Repository-Dokumentation maßgeblicher als Obsidian-Zusammenfassungen.
-- Schreibe nur auf ausdrücklichen Wunsch wie „Merke dir das“, „Aktualisiere mein
-  Obsidian“ oder „Mach einen Wrap-up“ in den Vault.
-- Lege neue unsortierte Informationen zunächst in `00 Codex/Inbox.md` ab.
+- Prüfe nach jeder substanziellen Aufgabe automatisch, ob neue dauerhafte
+  Erinnerungen entstanden sind, und schreibe sie ohne zusätzliche Aufforderung
+  in den Vault. Dazu gehören Entscheidungen, Korrekturen, Präferenzen,
+  Projektfortschritt, wichtige Einschränkungen, offene Schleifen und nächste
+  Schritte, die in späteren Chats relevant bleiben.
+- Aktualisiere eine passende bestehende Notiz, wenn Ziel und Einordnung klar
+  sind. Lege die Information andernfalls zunächst in `00 Codex/Inbox.md` ab.
+- Aktualisiere bei wesentlichem Projektfortschritt auch
+  `00 Codex/Aktueller Stand.md`.
+- Speichere keine flüchtigen Gesprächsdetails, bloßen Vermutungen, Geheimnisse
+  oder Informationen, die sich zuverlässig und leicht aus dem aktuellen Code
+  ableiten lassen.
+- Erwähne am Ende knapp, was automatisch im Vault festgehalten wurde.
 - Erhalte Obsidian-Wikilinks, Frontmatter und die vorhandene Struktur.
-- Zeige Änderungen vor einem Commit. Committe oder pushe den Vault nur auf
-  ausdrücklichen Wunsch.
+- Committe oder pushe den Vault nur auf ausdrücklichen Wunsch.
