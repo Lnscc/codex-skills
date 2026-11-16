@@ -72,10 +72,22 @@ For implementation work, apply these transitions automatically:
 
 - Immediately before implementation changes begin, move the issue to
   `In Progress` without asking.
-- When the implemented change is verified on the repository's default branch,
+- When acceptance criteria are verified and the integration check below passes,
   move the issue to `Done` without asking.
-- Until the change reaches the default branch, keep the issue `In Progress`
+- Until integration is proven, keep the issue `In Progress`
   unless the user explicitly requests another valid state.
+
+Before setting implementation work to `Done`, identify the repository's actual
+remote default branch (usually `origin/main`) and obtain its current state via
+fetch or the hosting service. Verify that the commit containing the complete
+implementation is an ancestor of that branch, for example with
+`git merge-base --is-ancestor <implementation-sha> <remote>/<default-branch>`.
+For squash or rebase merges, identify and check the resulting integrated commit
+rather than requiring the original feature-branch SHA. Include the integrated
+commit, target branch, and acceptance verification in the completion evidence.
+An unchecked or stale remote reference, green tests alone, an open PR, local-only
+commits, or uncommitted changes on a checked-out `main` do not pass this check.
+If integration cannot be verified, retain `In Progress` and report what is missing.
 
 Never commit, push, merge, or otherwise put changes on the default branch merely
 to trigger `Done`; source-control mutations require their own authorization.

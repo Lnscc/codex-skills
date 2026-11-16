@@ -34,10 +34,12 @@ ticket and verify the resulting behavior.
 7. Verify the acceptance criteria and meaningful risks with the narrowest
    sufficient checks. For REST API contract changes, update the corresponding
    Postman collection and tests and validate that the collection is valid JSON.
-8. Give `product-owner` a concise implementation result and verification evidence
-   to add as a Linear comment. Update the description only if the durable
-   requirements changed. If verification occurred on the default branch, have
-   it move the issue to `Done`; otherwise leave the issue `In Progress`.
+8. Perform the remote default-branch integration check defined in `product-owner`.
+   Give it a concise implementation result, acceptance verification, and the
+   integrated commit and target branch as evidence for a Linear comment. Update
+   the description only if the durable requirements changed. Have it move the
+   issue to `Done` only when acceptance verification and the integration check
+   both pass; otherwise leave it `In Progress` and report the missing evidence.
 
 ## Boundaries
 
