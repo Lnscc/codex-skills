@@ -1,0 +1,35 @@
+---
+name: obsidian-memory
+description: Nutzt und pflegt den persönlichen Obsidian-Vault als dauerhaftes Arbeitsgedächtnis für Projektkontext, Entscheidungen und Arbeitspräferenzen. Verwenden, wenn eine Aufgabe diesen Kontext benötigt oder nach substanzieller Arbeit neue dauerhafte Erkenntnisse festzuhalten sind.
+---
+
+# Obsidian-Arbeitsgedächtnis
+
+Der persönliche Vault liegt unter `C:\Users\linus\Documents\Obsidian\mind palace`.
+Arbeite direkt mit den Markdown-Dateien; ein Obsidian-Plugin ist nicht erforderlich.
+
+## Kontext gezielt lesen
+
+- Beginne bei `00 Codex/Start.md`. Lies bei Projektarbeit `00 Codex/Aktueller Stand.md` und folge nur den für die Aufgabe relevanten Links.
+- Suche bei Bedarf mit `rg` gezielt nach Projekt, Thema oder Entscheidung, statt den gesamten Vault zu laden.
+- Für technische Ist-Zustände sind aktueller Repository-Code und aktuelle Repository-Dokumentation maßgeblicher als Obsidian-Zusammenfassungen. Behandle frühere Notizen als Kontext, nicht als Nachweis aktueller Umsetzung.
+
+## Dauerhafte Erkenntnisse pflegen
+
+Prüfe nach jeder substanziellen Aufgabe, ob neue Informationen in späteren Chats nützlich bleiben: bestätigte Entscheidungen, Korrekturen, Arbeitspräferenzen, wesentlicher Projektfortschritt, wichtige Einschränkungen sowie offene Schleifen und nächste Schritte. Speichere solche Erkenntnisse ohne zusätzliche Aufforderung.
+
+- Lies vor einer Änderung die Zielnotiz. Aktualisiere eine passende bestehende Notiz, wenn Ziel und Einordnung klar sind. Nutze andernfalls `00 Codex/Inbox.md`; lege nicht für jede Aufgabe eine neue Notiz an.
+- Halte jede Information möglichst an einer Stelle fest. Ergänze oder korrigiere vorhandene Aussagen, statt widersprüchliche oder doppelte Einträge anzuhängen. Erhalte weiterhin relevante Begründungen früherer Entscheidungen.
+- Wähle den Ablageort nach dem Inhalt, nicht nach der gerade geöffneten Notiz. Projektbeschreibungen bleiben ein knapper Einstieg mit Zweck, aktuellem Gesamtstand und Links. Eigenständige dauerhafte Themen wie Entscheidungen, Einschränkungen oder offene Untersuchungen gehören bei entsprechendem Umfang in passende Themennotizen; allgemeine Arbeitspräferenzen projektübergreifend ablegen. Kleine Ergänzungen benötigen keine eigene Datei.
+- Technische Implementierungsdetails, Test- und Laufprotokolle, Commit-Nachweise und Ticketverläufe gehören in Repository-Dokumentation beziehungsweise Linear. Verweise im Vault auf diese Quellen, statt sie zu kopieren; halte dort nur die für spätere Arbeit relevante Aussage fest. Diese Einordnung allein beauftragt keine Änderungen in externen Systemen.
+- Führe bei Statusänderungen die betroffene Zusammenfassung auf den aktuellen Stand zusammen. Ersetze überholte Aussagen und erledigte offene Punkte, statt spätere Abschlussabschnitte anzuhängen. Projektbeschreibungen und Statusnotizen sind keine chronologischen Tätigkeitsprotokolle.
+- Aktualisiere bei wesentlichem Projektfortschritt auch `00 Codex/Aktueller Stand.md`: knapp zusammenfassen und auf die ausführliche Projektnotiz verweisen.
+- Formuliere bestätigte Ergebnisse und verbleibende offene Punkte klar getrennt. Gib bei zeitabhängigen Statusaussagen ein Datum an, wenn es für die spätere Einordnung nötig ist.
+- Speichere keine flüchtigen Gesprächsdetails, bloßen Vermutungen, Geheimnisse oder Informationen, die sich zuverlässig und leicht aus dem aktuellen Code ableiten lassen. Ohne neue dauerhafte Erkenntnis ist kein Eintrag nötig.
+
+## Änderungen abschließen
+
+- Erhalte Obsidian-Wikilinks, Frontmatter und die vorhandene Struktur. Beschränke Änderungen auf die betroffenen Abschnitte.
+- Lies die geänderten Abschnitte zur Kontrolle erneut und prüfe neu gesetzte lokale Wikilinks auf ein vorhandenes Ziel.
+- Committe oder pushe den Vault nur auf ausdrücklichen Wunsch.
+- Erwähne in der Abschlussantwort knapp, was und wo im Vault festgehalten wurde. Falls ein erforderlicher Schreibzugriff blockiert ist, benenne den ausstehenden Eintrag, statt eine Speicherung zu behaupten.

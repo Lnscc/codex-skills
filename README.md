@@ -10,6 +10,7 @@ Personal Codex skills available across local repositories.
 - `engineering-ticket`: Draft or refine the requirements in an engineering issue's `Ticket` section.
 - `implementation-plan`: Turn an issue and its `Impact` section into an executable `Plan` section.
 - `keep-it-simple`: Keep code, documentation, and other writing simple, efficient, and minimal.
+- `obsidian-memory`: Use and maintain the personal Obsidian vault as durable project and preference memory.
 - `product-owner`: Orchestrate engineering tickets and own their Linear lifecycle, priority, status, and epic placement.
 - `project-overview`: Plan a project and maintain its Markdown architecture, libraries, and workflows overview.
 - `ponytail`: Prefer the smallest working implementation using YAGNI, existing code, standard-library, and native-platform solutions.
