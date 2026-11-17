@@ -1,19 +1,21 @@
 ---
 name: codex-chat-namer
-description: Pflegt den Titel eines Codex-Chats automatisch anhand seines aktuellen Hauptziels. In normalen Codex-Chats verwenden, sobald ein belastbares Ziel erkennbar wird, und erneut prüfen, wenn der Nutzer das Hauptziel ersetzt, präzisiert oder zu einem anderen Vorhaben wechselt; auch für ausdrücklich gewünschte Titel und Umbenennungen.
+description: Pflegt den Titel eines Codex-Chats anhand seines prägenden Hauptthemas. In normalen Codex-Chats verwenden, sobald ein belastbares Ziel erkennbar wird, und bei einem klaren, dauerhaften Themenwechsel erneut abgleichen; auch für ausdrücklich gewünschte Titel und Umbenennungen.
 ---
 
 # Codex Chat Namer
 
-Halte den Titel des aktuellen Chats synchron mit dem tatsächlichen Hauptziel. Berücksichtige den relevanten Verlauf und priorisiere die jüngste noch aktive Aufgabe.
+Benenne den aktuellen Chat nach seinem prägenden Hauptthema, damit der Nutzer ihn später wiederfindet. Gewichte den bisherigen Gesprächsverlauf und die darin geleistete Arbeit; die jüngste Nachricht allein bestimmt den Titel nicht.
 
 ## Automatischer Abgleich
 
 Prüfe nach einer Nutzernachricht, ob ein belastbares Hauptziel erkennbar ist:
 
 - Hat der Chat noch keinen von dir passend gesetzten Titel, setze ihn, sobald Ergebnis, Problem oder Vorhaben konkret genug ist.
-- Benenne den Chat erneut, wenn der Nutzer das bisherige Hauptziel verwirft oder ersetzt, zu einem unabhängigen Vorhaben wechselt oder eine zunächst vage Aufgabe so konkretisiert, dass der bisherige Titel irreführend geworden ist.
-- Behalte den Titel bei, wenn sich nur Lösungsweg, Zwischenschritt, Status, technische Einzelheit oder Formulierung ändert. Vermeide Umbenennungen zwischen bloßen Synonymen.
+- Benenne den Chat erneut, wenn der Nutzer das Hauptziel ausdrücklich verwirft oder ersetzt, ein unabhängiges Vorhaben über mehrere Gesprächsschritte zum neuen Schwerpunkt wird oder eine zunächst vage Aufgabe so konkretisiert wird, dass der bisherige Titel irreführend geworden ist. Je stärker das bisherige Thema den Chat geprägt hat, desto klarer muss der Wechsel sein.
+- Behalte den Titel bei Rückfragen, Rückblicken, Learnings, nächsten Schritten zum bisherigen Vorhaben und kurzen Themenabstechern bei. Auch ein abgeschlossenes Ziel bleibt für die Wiederauffindbarkeit relevant. Eine einzelne neue Frage oder „Wie machen wir weiter?“ belegt noch keinen dauerhaften Themenwechsel.
+- Behalte den Titel ebenfalls bei, wenn sich nur Lösungsweg, Zwischenschritt, Status, technische Einzelheit oder Formulierung ändert. Vermeide Umbenennungen zwischen bloßen Synonymen.
+- Ist unklar, ob ein Abstecher oder ein dauerhafter Wechsel vorliegt, behalte den bestehenden passenden Titel bei. Bei einem tatsächlichen Wechsel wähle einen Titel, der weiterhin prägenden Projekt- oder Ticketkontext erhält, soweit er zum neuen Schwerpunkt gehört.
 - Warte ab, solange noch kein stabiles Ziel erkennbar ist. Frage nicht allein wegen des Titels nach.
 
 Rufe für den aktuellen Chat `set_thread_title` mit dem gewählten Titel auf und lasse `threadId` weg. Führe diese Pflege ohne Rückfrage und möglichst unaufdringlich aus; mache sie nicht zum Hauptinhalt der Antwort. Wenn das Werkzeug fehlt, überspringe die automatische Umbenennung ohne die eigentliche Aufgabe zu stören.
