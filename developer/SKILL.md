@@ -13,6 +13,9 @@ description: >
 Implement the smallest maintainable change that satisfies the engineering
 ticket and verify the resulting behavior.
 
+Split changes into small, cohesive, independently reviewable commits. Keep
+independent changes separate and preserve this breakdown when merging.
+
 ## Workflow
 
 1. Read the repository instructions and inspect the working tree. Preserve
