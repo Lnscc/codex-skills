@@ -1,3 +1,11 @@
+## Parallele Arbeit mit Subagenten
+
+Verwende `$work-orchestrator`, wenn sich wesentliche Teile einer beauftragten
+Aufgabe sinnvoll unabhängig parallel bearbeiten lassen. Setze dafür ohne
+zusätzliche Rückfrage Subagenten ein und führe ihre Ergebnisse zusammen.
+Kleine oder eng voneinander abhängige Aufgaben bearbeitest du selbst.
+Delegation erweitert weder den Auftrag noch bestehende Berechtigungen.
+
 ## Automatische Chat-Titel
 
 Verwende in jedem Codex-Chat `$codex-chat-namer`. Setze den Titel automatisch,

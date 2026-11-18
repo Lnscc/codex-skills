@@ -4,4 +4,4 @@ interface:
   default_prompt: "Use $work-orchestrator to split this task into safe work packets, coordinate execution, and verify the integrated result."
 
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true

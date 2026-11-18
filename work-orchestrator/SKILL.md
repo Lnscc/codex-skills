@@ -2,16 +2,30 @@
 name: work-orchestrator
 description: >
   Decompose complex work into dependency-aware agent assignments, coordinate
-  parallel execution, and integrate verified results. Use when the user
-  explicitly asks to distribute work, orchestrate subagents, review an
-  execution split, or prepare a delegation plan. Do not use for small tasks
-  that are faster and safer for one agent to complete directly.
+  parallel execution, and integrate verified results. Use proactively when
+  substantial independent parts of an authorized task can progress in parallel,
+  or when the user asks to orchestrate subagents, review an execution split,
+  or prepare a delegation plan. Keep small or tightly dependent tasks with one agent.
 ---
 
 # Work Orchestrator
 
 Coordinate the smallest useful team while keeping scope, ownership, and final
 quality under the orchestrator's control.
+
+## Automatic use
+
+For an execution request, assess whether independent work can usefully run in
+parallel. When it can, use the available collaboration tools to spawn subagents
+without asking for separate delegation approval. This skill explicitly calls
+for parallel agent work in that case; the original task still defines scope
+and authorized side effects. A request to create or edit this skill alone does
+not require spawning agents.
+
+Use `spawn_agent` for subtasks within the current chat, not user-facing chat
+creation tools. Give workers bounded assignments and continue useful work
+yourself while they run. Workers should report back rather than recursively
+delegate unless their assignment explicitly calls for further delegation.
 
 ## Select the mode
 
@@ -26,8 +40,8 @@ quality under the orchestrator's control.
 If the requested mode is clear, proceed without asking. If delegation has no
 material benefit, complete the task directly in execute mode or recommend a
 single-agent plan in the other modes, with a brief reason.
-When the skill is explicitly invoked with a concrete task and no mode, use
-Execute. Requests to plan, split, or review still select their named mode.
+When the skill applies to a concrete execution task and no mode is specified,
+use Execute. Requests to plan, split, or review still select their named mode.
 
 ## Decide what to delegate
 
