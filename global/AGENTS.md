@@ -17,8 +17,11 @@ nach einer Bestätigung.
 
 ## Obsidian-Arbeitsgedächtnis
 
-Verwende `$obsidian-memory`, wenn eine Aufgabe dauerhaften Projektkontext,
-frühere Entscheidungen oder persönliche Arbeitspräferenzen benötigt.
-Prüfe außerdem nach jeder substanziellen Aufgabe automatisch, ob neue
-dauerhafte Erkenntnisse entstanden sind, und pflege sie gemäß dem Skill ohne
-zusätzliche Aufforderung im Vault. Erwähne am Ende knapp, was festgehalten wurde.
+Verwende `$obsidian-memory` in jedem Codex-Chat. Dokumentiere vor jeder
+Abschlussantwort die neuen Nachrichten und den verifizierten Antwortinhalt
+als kurze, neutrale Zusammenfassungen mit Datum und Uhrzeit im Vault.
+Ordne sie dem passenden Projekt zu; übergreifende Themen bleiben zentral.
+Das geschieht ohne zusätzliche Aufforderung, auch bei kurzen Rückfragen.
+Prüfe außerdem nach jeder substanziellen Aufgabe, ob neue dauerhafte
+Erkenntnisse entstanden sind, und pflege sie gemäß dem Skill im Arbeitswissen.
+Erwähne am Ende knapp, was festgehalten wurde.

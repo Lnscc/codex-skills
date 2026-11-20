@@ -1,12 +1,24 @@
 ---
 name: obsidian-memory
-description: Nutzt und pflegt den persönlichen Obsidian-Vault als dauerhaftes Arbeitsgedächtnis für Projektkontext, Entscheidungen, Arbeitspräferenzen und Inhalte zur späteren Weiterarbeit. Verwenden, wenn eine Aufgabe diesen Kontext benötigt oder nach substanzieller Arbeit neue dauerhafte Erkenntnisse oder weiterverwendbare Inhalte festzuhalten sind.
+description: Dokumentiert in jedem Codex-Chat automatisch die Nachrichten als neutrale Zusammenfassungen mit Zeitangaben im passenden Obsidian-Projekt. Nutzt und pflegt außerdem dauerhaften Projektkontext, Entscheidungen, Arbeitspräferenzen und Inhalte zur späteren Weiterarbeit.
 ---
 
 # Obsidian-Arbeitsgedächtnis
 
 Der persönliche Vault liegt unter `C:\Users\linus\Documents\Obsidian\mind palace`.
 Arbeite direkt mit den Markdown-Dateien; ein Obsidian-Plugin ist nicht erforderlich.
+
+## Gespräche automatisch dokumentieren
+
+Pflege in jedem Codex-Chat ohne zusätzliche Aufforderung ein fortlaufendes Gesprächsprotokoll. Ergänze vor jeder Abschlussantwort die seit der letzten Dokumentation hinzugekommenen Nachrichten und den verifizierten Inhalt der anstehenden Antwort. Das gilt auch für kurze Rückfragen, Bestätigungen und vorläufige Ideen, unabhängig davon, ob dauerhafte Erkenntnisse entstehen.
+
+- Fasse jede Nachricht knapp, neutral und inhaltsbezogen zusammen. Erhalte Wünsche, Fragen, Begründungen, Vorschläge, Entscheidungen, Korrekturen und offene Punkte mit erkennbarem Status. Zwischenmeldungen mit eigenständigem Inhalt berücksichtigen; Wiederholungen und Fülltext verdichten. Keine Rohchats, Toolprotokolle oder Geheimnisse speichern.
+- Verwende Datum und Uhrzeit in `Europe/Berlin`. Nutze vorhandene Nachrichtenzeiten; fehlen sie, kennzeichne die aktuelle Zeit als Erfassungszeit. Frühere Uhrzeiten nicht erfinden.
+- Ordne Inhalte nach ihrem Thema zu: projektbezogen unter `<Projekt>/Gespräche/<Thema>.md`, übergreifend unter `00 Codex/Gespräche/<Thema>.md`. Nutze bestehende Projektordner und verlinke neue Gesprächsnotizen im jeweiligen Projekteinstieg beziehungsweise in `00 Codex/Start.md`.
+- Lies die passende Gesprächsnotiz vor dem Ergänzen. Halte Chat-ID, sofern bekannt, und den erfassten Verlauf fest, damit Fortsetzungen ohne doppelte Einträge möglich sind. Bei mehreren Projekten nur die zugehörigen Inhalte dort ablegen und verwandte Notizen verlinken; keinen ganzen Verlauf mehrfach kopieren.
+- Gesprächsprotokolle erhalten den zeitlichen Verlauf. Gepflegte Themen-, Projekt- und Entscheidungsnotizen daneben weiterhin auf den aktuellen Stand bringen; sie ersetzen das Gesprächsprotokoll nicht. Technische Details nur knapp zusammenfassen und auf Repository oder Linear verweisen.
+
+Diese Dokumentation erfolgt während der Chatbearbeitung. Sie ist kein Hintergrundexport und verarbeitet keine ungelesenen anderen Chats. Bei blockiertem Schreibzugriff die ausstehende Aktualisierung benennen, statt Speicherung zu behaupten.
 
 ## Kontext gezielt lesen
 
@@ -30,7 +42,7 @@ Prüfe dabei auch, ob im Gespräch Inhalte entstanden sind, die für spätere We
 - Aktualisiere bei wesentlichem Projektfortschritt auch `00 Codex/Aktueller Stand.md`: knapp zusammenfassen und auf die ausführliche Projektnotiz verweisen.
 - Formuliere bestätigte Ergebnisse und verbleibende offene Punkte klar getrennt. Gib bei zeitabhängigen Statusaussagen ein Datum an, wenn es für die spätere Einordnung nötig ist.
 - Halte unbestätigte Annahmen nicht als Tatsachen fest. Vorläufige Arbeitsinhalte dürfen mit klar erkennbarem Status gespeichert werden.
-- Speichere keine flüchtigen Gesprächsdetails, Geheimnisse oder Informationen, die sich zuverlässig und leicht aus dem aktuellen Code ableiten lassen. Ohne neue dauerhafte Erkenntnisse oder Inhalte zur späteren Weiterarbeit ist kein Eintrag nötig.
+- Übernimm in das dauerhafte Arbeitswissen keine flüchtigen Gesprächsdetails, Geheimnisse oder Informationen, die sich zuverlässig und leicht aus dem aktuellen Code ableiten lassen. Ohne neue dauerhafte Erkenntnisse oder Inhalte zur späteren Weiterarbeit ist dort kein Eintrag nötig; das Gesprächsprotokoll wird trotzdem ergänzt.
 
 ## Änderungen abschließen
 
